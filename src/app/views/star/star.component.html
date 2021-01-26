@@ -1,0 +1,92 @@
+<div class="wrapper">
+
+<app-index-navbar></app-index-navbar>
+
+<div class="section section-sm section-shaped">
+    <div class="shape shape-style-1 shape-default">
+        <span class="span-150"></span>
+        <span class="span-50"></span>
+        <span class="span-50"></span>
+        <span class="span-75"></span>
+        <span class="span-100"></span>
+        <span class="span-75"></span>
+        <span class="span-50"></span>
+        <span class="span-100"></span>
+        <span class="span-50"></span>
+        <span class="span-100"></span>
+    </div>
+    <div class="page-header">
+        <div class="container shape-container d-flex align-items-center py-lg mt-2">
+            <div class="col px-0">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-lg-6 text-center">
+                        <h5 class="display-2 font-weight-normal text-white"> <i class="fas fa-star"></i> </h5>
+                        <h3 class="text-white display-3"> Creative Stars </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="separator separator-bottom separator-skew zindex-100">
+      <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
+      </svg>
+    </div> -->
+</div>
+<div class="section features-1" style="min-height: 700px;">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-4 mt-5" *ngFor="let item of starArr">
+                <div class="info card shadow py-5 px-5 card-lift--hover">
+                  
+                    <img src="{{ item.photoURL }}" alt="image" class="img-fluid rounded" style="height: 77px; width: auto;">
+                
+                  <h6 class="info-title text-uppercase" [ngStyle]="{'color': item.color}">   <i class="fas fa-star" [ngStyle]="{'color': item.color}"></i>  {{ item.title }} </h6>
+                   
+                    <p class="description opacity-8" style="min-height: 50px;">
+                        {{ item.description }} 
+                    </p>
+
+                    <p class="mt-2">
+                        <span class="badge badge-white badge-pill mr-2"><i class="fas fa-calendar-day"></i>  {{item.createdDate.toDate() | date:'dd MMM yyyy'}} </span>
+                        <span class="badge badge-white badge-pill"><i class="fas fa-user-astronaut"></i>  {{ item.author }} </span>
+                        <span class="badge badge-white badge-pill"><i class="fas fa-envelope"></i>  {{ item.email }} </span>
+                    </p>
+                   
+                    <div class="btn-wrapper text-center">
+                        <a href="{{ item.browseurl }}" target="_blank" class="btn btn-white btn-icon mt-3 mb-sm-0">
+                           <i class="fas fa-globe"></i>
+                        </a>
+                        <a [routerLink]="[ '/member', item.uid ]" target="_blank" class="btn btn-white btn-icon mt-3 mb-sm-0">
+                            <i class="fas fa-user-astronaut"></i>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-12 mt-5 text-center">
+
+                <div class="btn-wrapper text-center">
+                    <a (click)="GetFirstCollection()" class="btn btn-white btn-icon mt-3 mb-sm-0">
+                       🌑
+                    </a>
+                    <a (click)="GetCollection()" class="btn btn-white btn-icon mt-3 mb-sm-0">
+                        ▶
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<br /><br />
+
+<app-footer></app-footer>
+
+</div>

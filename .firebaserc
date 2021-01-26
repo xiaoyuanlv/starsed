@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "starsed-31"
+  },
+  "targets": {
+    "starsed-31": {
+      "hosting": {
+        "starsed-31": [
+          "starsed-31"
+        ]
+      }
+    }
+  }
+}
